@@ -1,5 +1,7 @@
 ---
 layout: home
+title: CCWS 文档
+description: CCWS 用户使用说明书，覆盖 Codex安装、平台注册、账号充值、API Key、CC Switch、Codex 生图和常见问题排查。
 
 hero:
   name: CCWS

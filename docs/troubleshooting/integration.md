@@ -1,3 +1,8 @@
+---
+title: 工具兼容
+description: 排查 Codex、CC Switch 和其他 OpenAI 兼容工具接入 CCWS 时的配置兼容问题。
+---
+
 # 工具兼容
 
 ## IDE 插件无法连接

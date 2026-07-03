@@ -1,3 +1,8 @@
+---
+title: Codex 生图教程
+description: 安装 CCWS Codex Image Skill，配置 CCWS_IMAGE_API_KEY，并在 Codex 中使用 gpt-image-2 生成、编辑或处理图片。
+---
+
 # Codex 生图教程
 
 CCWS Codex Image Skill 可以让 Codex 在生图、图片编辑、图生图、局部修改和背景替换等任务中调用 CCWS 的生图模型。

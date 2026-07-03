@@ -1,3 +1,8 @@
+---
+title: Codex 下载安装
+description: 面向新用户的 Codex 客户端和 Codex CLI 安装指南，帮助先确认工具可用，再继续接入 CCWS。
+---
+
 # Codex 下载安装
 
 新用户建议先完成 Codex 下载安装，确认工具能打开，再继续完成平台注册、账号充值和 API Key 配置。

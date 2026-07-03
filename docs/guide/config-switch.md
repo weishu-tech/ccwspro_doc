@@ -1,3 +1,8 @@
+---
+title: CC Switch 使用教程
+description: 在 CC Switch 中添加 CCWS Provider，填写官网、API Key 和 https://www.ccws.pro/v1 请求地址，并启用 Codex 配置。
+---
+
 # CC Switch 使用教程
 
 CC Switch 是一个本机桌面配置管理工具。你可以用它保存 CCWS 的请求地址和 API Key，并在 Codex 等命令行工具之间切换配置。
@@ -39,6 +44,8 @@ brew install --cask cc-switch
 安装完成后打开 CC Switch。首次启动时，如果它提示导入已有配置，可以按页面提示导入；如果你是第一次配置 Codex，也可以直接新建配置。
 
 ## 安装完成后配置 CCWS
+
+如果你只需要快速确认 CCWS Provider 的字段，可以直接看 [CC Switch 添加 CCWS Provider](/guide/cc-switch-provider)。
 
 ### 进入 Codex 配置
 

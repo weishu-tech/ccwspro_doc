@@ -1,3 +1,8 @@
+---
+title: Node.js 环境（CLI 可选）
+description: 为使用 npm 安装或更新 Codex CLI 的用户准备 Node.js、npm 和 Git 环境检查步骤。
+---
+
 # Node.js 环境（CLI 可选）
 
 本页属于 Codex安装章节，只给使用 Codex CLI 的用户作为补充说明。如果你安装的是 Codex App，通常不需要先安装 Node.js，可以直接继续完成 [平台注册](/guide/register)、[账号充值](/guide/recharge) 和 [API Key](/guide/api-key)。

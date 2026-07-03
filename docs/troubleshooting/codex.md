@@ -1,3 +1,8 @@
+---
+title: Codex CLI
+description: 排查 Codex CLI 启动、配置读取、Provider 切换、Base URL 和 API Key 相关问题。
+---
+
 # Codex CLI
 
 ## Codex 读取不到 Key

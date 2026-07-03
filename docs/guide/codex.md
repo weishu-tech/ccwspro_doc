@@ -1,3 +1,8 @@
+---
+title: Codex 配置
+description: 使用 CC Switch 或手动配置方式把 CCWS 添加到 Codex，填写 https://www.ccws.pro/v1 和 API Key 后完成请求验证。
+---
+
 # Codex 配置
 
 这一步要做两件事：
@@ -23,6 +28,8 @@
 - 填写 `https://www.ccws.pro/v1` 和你的 API Key。
 - 启用 `CCWS` Provider。
 - 重启 Codex 客户端，或关闭终端后重新打开终端。
+
+如果只想确认字段怎么填，可以直接看 [Codex Base URL 怎么填](/guide/codex-base-url) 和 [CC Switch 添加 CCWS Provider](/guide/cc-switch-provider)。
 
 完成后回到本页，继续下面的客户端或命令行验证。
 
@@ -145,3 +152,8 @@ codex
 如果命令行提示 `codex: command not found`，说明 Codex CLI 还没有安装好，请回到 [Codex 下载安装](/guide/codex-install) 重新验证。
 
 如果客户端可以打开但请求失败，先回到 CC Switch 中重新启用一次 Provider，再重启 Codex 客户端验证。
+
+如果 Codex 返回 401、403、429 或模型不存在，可以继续查看：
+
+- [Codex 401 / 403 / 429 怎么排查](/troubleshooting/codex-error-401-403-429)
+- [Codex model not found 怎么处理](/troubleshooting/model-not-found)

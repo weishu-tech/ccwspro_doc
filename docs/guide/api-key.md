@@ -1,3 +1,8 @@
+---
+title: 请求地址 / API Key
+description: 查看 CCWS 固定请求地址、OpenAI 兼容 Base URL、API Key 创建方式，以及 Codex 和 Codex 生图环境变量配置示例。
+---
+
 # 请求地址 / API Key
 
 完成平台注册和账号充值后，请在控制台创建并复制 API Key。请求地址不需要从控制台查找，直接使用本页给出的固定地址即可。
@@ -66,7 +71,10 @@ model: gpt-image-2
 
 API Key 创建后，继续完成：
 
+- [Codex Base URL 怎么填](/guide/codex-base-url)
+- [Codex API Key 配置](/guide/codex-api-key)
 - [高级教程：CC Switch 使用教程](/guide/config-switch)
+- [CC Switch 添加 CCWS Provider](/guide/cc-switch-provider)
 - [Codex 配置](/guide/codex)
 - [高级教程：Codex 生图教程](/guide/codex-image)
 

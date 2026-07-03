@@ -1,3 +1,8 @@
+---
+title: 安装与启动
+description: 排查 Codex 客户端、Codex CLI、Node.js、Git 或 CC Switch 安装启动失败问题。
+---
+
 # 安装与启动
 
 ## 命令不存在

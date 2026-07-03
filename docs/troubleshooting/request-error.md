@@ -1,3 +1,8 @@
+---
+title: 请求错误
+description: 根据 CCWS 和工具返回的错误信息排查 Base URL、模型名称、API Key、余额和请求格式问题。
+---
+
 # 请求错误
 
 ## 400 Bad Request
@@ -20,6 +25,10 @@
 - 稍后重试。
 - 检查余额或套餐限制。
 - 联系管理员提升额度。
+
+如果是在 Codex 中遇到 401、403 或 429，可以继续看 [Codex 401 / 403 / 429 怎么排查](./codex-error-401-403-429)。
+
+如果错误信息包含 `model not found`、`model_not_found` 或「模型不存在」，继续看 [Codex model not found 怎么处理](./model-not-found)。
 
 ## 500 / 502 / 503
 
