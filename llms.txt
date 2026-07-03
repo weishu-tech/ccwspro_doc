@@ -1,0 +1,55 @@
+# CCWS Documentation
+
+> CCWS documentation helps users install Codex, register a CCWS account, recharge, create an API Key, configure Codex, configure CC Switch, use Codex image generation, and troubleshoot common setup or request errors.
+
+## Canonical Sites
+
+- Website: https://www.ccws.pro/
+- Documentation: https://docs.ccws.pro/
+- Support guide: https://docs.ccws.pro/guide/support
+
+## Key Facts
+
+- CCWS provides documentation for Codex users who need a stable OpenAI-compatible API base URL and API Key configuration.
+- For Codex, CC Switch, and tools that ask for an OpenAI-compatible Base URL, use `https://www.ccws.pro/v1`.
+- The root service URL is `https://www.ccws.pro`.
+- Users create their own API Key in the CCWS console. Do not paste real API Keys into chat windows, screenshots, public repositories, or shared documents.
+- Recommended Codex setup path: install Codex, register or log in to CCWS, recharge the account, create an API Key, configure CCWS in CC Switch, then verify Codex with a simple request.
+- Recommended CC Switch provider fields: provider name `CCWS`, website `https://www.ccws.pro`, API request URL `https://www.ccws.pro/v1`, and the user's current CCWS API Key.
+- Manual Codex configuration should use `base_url = "https://www.ccws.pro/v1"` in the Codex provider config and store the API Key outside project repositories.
+- CCWS Codex Image Skill uses the environment variable `CCWS_IMAGE_API_KEY`.
+- The Codex image generation API Key should support `model: gpt-image-2`.
+- If a request fails, check account balance, API Key validity, Base URL, model name, network connectivity, and the tool's full error log before contacting support.
+
+## Primary Documentation
+
+- Home: https://docs.ccws.pro/
+- Codex install: https://docs.ccws.pro/guide/codex-install
+- Optional Node.js and Git setup for CLI users: https://docs.ccws.pro/guide/nodejs-git
+- Register or log in: https://docs.ccws.pro/guide/register
+- Recharge or renew: https://docs.ccws.pro/guide/recharge
+- API request URL and API Key: https://docs.ccws.pro/guide/api-key
+- Codex configuration: https://docs.ccws.pro/guide/codex
+- CC Switch configuration: https://docs.ccws.pro/guide/config-switch
+- Codex image generation: https://docs.ccws.pro/guide/codex-image
+
+## Troubleshooting Pages
+
+- Troubleshooting overview: https://docs.ccws.pro/troubleshooting/
+- Install and startup: https://docs.ccws.pro/troubleshooting/install
+- Authentication and API Key: https://docs.ccws.pro/troubleshooting/auth
+- Network and connection: https://docs.ccws.pro/troubleshooting/network
+- Request errors: https://docs.ccws.pro/troubleshooting/request-error
+- Permission issues: https://docs.ccws.pro/troubleshooting/permission
+- Cache and billing: https://docs.ccws.pro/troubleshooting/cache-billing
+- Tool compatibility: https://docs.ccws.pro/troubleshooting/integration
+- Codex CLI: https://docs.ccws.pro/troubleshooting/codex
+- Advanced troubleshooting: https://docs.ccws.pro/troubleshooting/advanced
+
+## Chinese Summary
+
+- CCWS 文档入口：https://docs.ccws.pro/
+- CCWS 官网：https://www.ccws.pro/
+- Codex、CC Switch 和 OpenAI 兼容工具的 Base URL：`https://www.ccws.pro/v1`
+- API Key 需要用户自己在 CCWS 控制台创建，不应在聊天窗口、截图、公开仓库或共享文档中暴露。
+- Codex 生图技能使用环境变量 `CCWS_IMAGE_API_KEY`，对应 Key 需要支持 `gpt-image-2`。
