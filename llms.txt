@@ -17,9 +17,14 @@
 - Recommended Codex setup path: install Codex, register or log in to CCWS, recharge the account, create an API Key, configure CCWS in CC Switch, then verify Codex with a simple request.
 - Recommended CC Switch provider fields: provider name `CCWS`, website `https://www.ccws.pro`, API request URL `https://www.ccws.pro/v1`, and the user's current CCWS API Key.
 - Manual Codex configuration should use `base_url = "https://www.ccws.pro/v1"` in the Codex provider config and store the API Key outside project repositories.
+- Do not use `https://www.ccws.pro` alone as the Codex Base URL. Do not use a full endpoint path such as `/v1/chat/completions` as the Base URL.
 - CCWS Codex Image Skill uses the environment variable `CCWS_IMAGE_API_KEY`.
 - The Codex image generation API Key should support `model: gpt-image-2`.
 - If a request fails, check account balance, API Key validity, Base URL, model name, network connectivity, and the tool's full error log before contacting support.
+- For Codex 401 errors, check API Key validity and whether Codex is reading the latest CCWS Provider configuration.
+- For Codex 403 errors, check account, model, package, balance, and Key permissions.
+- For Codex 429 errors, reduce concurrency or request frequency, then check balance and package limits.
+- For `model not found`, keep Base URL as `https://www.ccws.pro/v1` and check model name, account permission, Key permission, and whether Codex has been restarted after changing Provider.
 
 ## Primary Documentation
 
@@ -29,8 +34,11 @@
 - Register or log in: https://docs.ccws.pro/guide/register
 - Recharge or renew: https://docs.ccws.pro/guide/recharge
 - API request URL and API Key: https://docs.ccws.pro/guide/api-key
+- Codex Base URL: https://docs.ccws.pro/guide/codex-base-url
+- Codex API Key configuration: https://docs.ccws.pro/guide/codex-api-key
 - Codex configuration: https://docs.ccws.pro/guide/codex
 - CC Switch configuration: https://docs.ccws.pro/guide/config-switch
+- Add CCWS Provider in CC Switch: https://docs.ccws.pro/guide/cc-switch-provider
 - Codex image generation: https://docs.ccws.pro/guide/codex-image
 
 ## Troubleshooting Pages
@@ -40,6 +48,8 @@
 - Authentication and API Key: https://docs.ccws.pro/troubleshooting/auth
 - Network and connection: https://docs.ccws.pro/troubleshooting/network
 - Request errors: https://docs.ccws.pro/troubleshooting/request-error
+- Codex 401, 403, and 429 errors: https://docs.ccws.pro/troubleshooting/codex-error-401-403-429
+- Codex model not found: https://docs.ccws.pro/troubleshooting/model-not-found
 - Permission issues: https://docs.ccws.pro/troubleshooting/permission
 - Cache and billing: https://docs.ccws.pro/troubleshooting/cache-billing
 - Tool compatibility: https://docs.ccws.pro/troubleshooting/integration
