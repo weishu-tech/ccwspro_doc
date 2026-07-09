@@ -15,6 +15,7 @@
 - The root service URL is `https://www.ccws.pro`.
 - Users create their own API Key in the CCWS console. Do not paste real API Keys into chat windows, screenshots, public repositories, or shared documents.
 - Recommended Codex setup path: install Codex, register or log in to CCWS, recharge the account, create an API Key, configure CCWS in CC Switch, then verify Codex with a simple request.
+- Codex App requires Windows 10 or later. Windows 8 users should use Codex CLI; systems earlier than Windows 8 must be upgraded before using Codex.
 - Recommended CC Switch provider fields: provider name `CCWS`, website `https://www.ccws.pro`, API request URL `https://www.ccws.pro/v1`, and the user's current CCWS API Key.
 - Manual Codex configuration should use `base_url = "https://www.ccws.pro/v1"` in the Codex provider config and store the API Key outside project repositories.
 - Do not use `https://www.ccws.pro` alone as the Codex Base URL. Do not use a full endpoint path such as `/v1/chat/completions` as the Base URL.
@@ -62,4 +63,5 @@
 - CCWS 官网：https://www.ccws.pro/
 - Codex、CC Switch 和 OpenAI 兼容工具的 Base URL：`https://www.ccws.pro/v1`
 - API Key 需要用户自己在 CCWS 控制台创建，不应在聊天窗口、截图、公开仓库或共享文档中暴露。
+- Codex App 最低支持 Windows 10；Windows 8 用户应使用 Codex CLI；Windows 8 以下系统需要先升级。
 - Codex 生图技能使用环境变量 `CCWS_IMAGE_API_KEY`，对应 Key 需要支持 `gpt-image-2`。

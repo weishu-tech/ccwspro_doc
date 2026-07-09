@@ -21,6 +21,10 @@ Codex 常见有两种使用方式：客户端和命令行。普通用户建议�
 | Windows | 在官方页面选择 Windows 入口，按提示跳转到 Microsoft Store 下载 |
 | Linux | 暂无桌面客户端，建议使用命令行方式 |
 
+::: warning Windows 系统版本要求
+Codex App 最低支持 Windows 10。Windows 8 用户只能通过 Codex CLI 使用；Windows 8 以下系统无法使用 Codex，需要先升级系统。
+:::
+
 ::: tip 下载不顺时
 如果 Microsoft Store 暂时无法下载，可以先使用下方的命令行方式安装 Codex CLI，先把工具用起来。等客户端可以正常下载后，再切回客户端方式。
 :::
