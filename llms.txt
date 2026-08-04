@@ -1,6 +1,6 @@
 # CCWS Documentation
 
-> CCWS documentation helps users install Codex, register a CCWS account, recharge, create an API Key, configure Codex, configure CC Switch, use Codex image generation, and troubleshoot common setup or request errors.
+> CCWS documentation helps users install ChatGPT (Codex), register a CCWS account, recharge, create an API Key, configure ChatGPT, configure CC Switch, use ChatGPT (Codex) image generation, and troubleshoot common setup or request errors.
 
 ## Canonical Sites
 
@@ -10,58 +10,54 @@
 
 ## Key Facts
 
-- CCWS provides documentation for Codex users who need a stable OpenAI-compatible API base URL and API Key configuration.
-- For Codex, CC Switch, and tools that ask for an OpenAI-compatible Base URL, use `https://www.ccws.pro/v1`.
+- CCWS provides documentation for ChatGPT (Codex) users who need a stable OpenAI-compatible API base URL and API Key configuration.
+- For ChatGPT (Codex), CC Switch, and tools that ask for an OpenAI-compatible Base URL, use `https://www.ccws.pro/v1`.
 - The root service URL is `https://www.ccws.pro`.
 - Users create their own API Key in the CCWS console. Do not paste real API Keys into chat windows, screenshots, public repositories, or shared documents.
-- Recommended Codex setup path: install Codex, register or log in to CCWS, recharge the account, create an API Key, configure CCWS in CC Switch, then verify Codex with a simple request.
-- Codex App requires Windows 10 or later. Windows 8 users should use Codex CLI; systems earlier than Windows 8 must be upgraded before using Codex.
+- Recommended ChatGPT (Codex) setup path: install ChatGPT (the desktop app includes Codex), register or log in to CCWS, recharge the account, create an API Key, then configure ChatGPT to connect to CCWS at `https://docs.ccws.pro/guide/connect` and verify ChatGPT replies to a simple request.
+- The configuration is complete when ChatGPT replies to a test message after the CCWS Provider is enabled and ChatGPT is restarted.
+- The ChatGPT desktop app (which includes Codex) requires Windows 10 or later. Windows 8 users should use Codex CLI; systems earlier than Windows 8 must be upgraded before using ChatGPT (Codex).
 - Recommended CC Switch provider fields: provider name `CCWS`, website `https://www.ccws.pro`, API request URL `https://www.ccws.pro/v1`, and the user's current CCWS API Key.
-- Manual Codex configuration should use `base_url = "https://www.ccws.pro/v1"` in the Codex provider config and store the API Key outside project repositories.
-- Do not use `https://www.ccws.pro` alone as the Codex Base URL. Do not use a full endpoint path such as `/v1/chat/completions` as the Base URL.
+- Manual ChatGPT (Codex) configuration should use `base_url = "https://www.ccws.pro/v1"` in the Codex provider config and store the API Key outside project repositories.
+- Do not use `https://www.ccws.pro` alone as the ChatGPT (Codex) Base URL. Do not use a full endpoint path such as `/v1/chat/completions` as the Base URL.
 - CCWS Codex Image Skill uses the environment variable `CCWS_IMAGE_API_KEY`.
-- The Codex image generation API Key should support `model: gpt-image-2`.
+- The ChatGPT (Codex) image generation API Key should support `model: gpt-image-2`.
 - If a request fails, check account balance, API Key validity, Base URL, model name, network connectivity, and the tool's full error log before contacting support.
-- For Codex 401 errors, check API Key validity and whether Codex is reading the latest CCWS Provider configuration.
-- For Codex 403 errors, check account, model, package, balance, and Key permissions.
-- For Codex 429 errors, reduce concurrency or request frequency, then check balance and package limits.
-- For `model not found`, keep Base URL as `https://www.ccws.pro/v1` and check model name, account permission, Key permission, and whether Codex has been restarted after changing Provider.
+- For ChatGPT (Codex) 401 errors, check API Key validity and whether ChatGPT is reading the latest CCWS Provider configuration.
+- For ChatGPT (Codex) 403 errors, check account, model, package, balance, and Key permissions.
+- For ChatGPT (Codex) 429 errors, reduce concurrency or request frequency, then check balance and package limits.
+- For `model not found`, keep Base URL as `https://www.ccws.pro/v1` and check model name, account permission, Key permission, and whether ChatGPT has been restarted after changing Provider.
+- For slow first-token responses (about 30-120 seconds, occurring consistently on every message), create a new session to test: if a new session is fast, the issue is a large context in the old session (often too many images); compress the old session and limit the number of images per session.
 
 ## Primary Documentation
 
 - Home: https://docs.ccws.pro/
-- Codex install: https://docs.ccws.pro/guide/codex-install
-- Optional Node.js and Git setup for CLI users: https://docs.ccws.pro/guide/nodejs-git
+- Quick start (full task steps overview): https://docs.ccws.pro/guide/quickstart
+- ChatGPT (Codex) install: https://docs.ccws.pro/guide/codex-install
+- Optional Node.js and Git setup for Codex CLI users: https://docs.ccws.pro/guide/nodejs-git
 - Register or log in: https://docs.ccws.pro/guide/register
 - Recharge or renew: https://docs.ccws.pro/guide/recharge
 - API request URL and API Key: https://docs.ccws.pro/guide/api-key
-- Codex Base URL: https://docs.ccws.pro/guide/codex-base-url
-- Codex API Key configuration: https://docs.ccws.pro/guide/codex-api-key
-- Codex configuration: https://docs.ccws.pro/guide/codex
+- Configure ChatGPT (Codex) to connect to CCWS (main setup page, merged from codex / codex-api-key / codex-base-url): https://docs.ccws.pro/guide/connect
+- ChatGPT (Codex) Base URL (merged into connect page): https://docs.ccws.pro/guide/codex-base-url
+- ChatGPT (Codex) API Key configuration (merged into connect page): https://docs.ccws.pro/guide/codex-api-key
+- ChatGPT (Codex) configuration (merged into connect page): https://docs.ccws.pro/guide/codex
 - CC Switch configuration: https://docs.ccws.pro/guide/config-switch
-- Add CCWS Provider in CC Switch: https://docs.ccws.pro/guide/cc-switch-provider
-- Codex image generation: https://docs.ccws.pro/guide/codex-image
+- ChatGPT (Codex) image generation: https://docs.ccws.pro/guide/codex-image
 
 ## Troubleshooting Pages
 
 - Troubleshooting overview: https://docs.ccws.pro/troubleshooting/
-- Install and startup: https://docs.ccws.pro/troubleshooting/install
-- Authentication and API Key: https://docs.ccws.pro/troubleshooting/auth
 - Network and connection: https://docs.ccws.pro/troubleshooting/network
-- Request errors: https://docs.ccws.pro/troubleshooting/request-error
-- Codex 401, 403, and 429 errors: https://docs.ccws.pro/troubleshooting/codex-error-401-403-429
-- Codex model not found: https://docs.ccws.pro/troubleshooting/model-not-found
-- Permission issues: https://docs.ccws.pro/troubleshooting/permission
-- Cache and billing: https://docs.ccws.pro/troubleshooting/cache-billing
-- Tool compatibility: https://docs.ccws.pro/troubleshooting/integration
-- Codex CLI: https://docs.ccws.pro/troubleshooting/codex
-- Advanced troubleshooting: https://docs.ccws.pro/troubleshooting/advanced
+- Slow first-token response: https://docs.ccws.pro/troubleshooting/slow-response
 
 ## Chinese Summary
 
 - CCWS 文档入口：https://docs.ccws.pro/
+- 快速开始（任务步骤一览）：https://docs.ccws.pro/guide/quickstart
 - CCWS 官网：https://www.ccws.pro/
-- Codex、CC Switch 和 OpenAI 兼容工具的 Base URL：`https://www.ccws.pro/v1`
+- ChatGPT（Codex）、CC Switch 和 OpenAI 兼容工具的 Base URL：`https://www.ccws.pro/v1`
+- 主线路径：安装 ChatGPT（桌面端含 Codex）→ 注册 CCWS → 充值 → 创建 API Key → 配置 ChatGPT 连接 CCWS（https://docs.ccws.pro/guide/connect）→ 发测试消息确认配置完成。
 - API Key 需要用户自己在 CCWS 控制台创建，不应在聊天窗口、截图、公开仓库或共享文档中暴露。
-- Codex App 最低支持 Windows 10；Windows 8 用户应使用 Codex CLI；Windows 8 以下系统需要先升级。
-- Codex 生图技能使用环境变量 `CCWS_IMAGE_API_KEY`，对应 Key 需要支持 `gpt-image-2`。
+- ChatGPT 桌面应用（内含 Codex）最低支持 Windows 10；Windows 8 用户应使用 Codex CLI；Windows 8 以下系统需要先升级。
+- ChatGPT（Codex）生图技能使用环境变量 `CCWS_IMAGE_API_KEY`，对应 Key 需要支持 `gpt-image-2`。
