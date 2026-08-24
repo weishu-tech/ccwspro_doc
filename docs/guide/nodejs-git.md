@@ -5,13 +5,13 @@ description: 为使用 npm 安装或更新 Codex CLI 的用户准备 Node.js、n
 
 # Node.js 环境（CLI 可选）
 
-本页属于 Codex安装章节，只给使用 Codex CLI 的用户作为补充说明。如果你安装的是 Codex App，通常不需要先安装 Node.js，可以直接继续完成 [平台注册](/guide/register)、[账号充值](/guide/recharge) 和 [API Key](/guide/api-key)。
+本页是安装章节的补充说明，只给使用 Codex CLI 的用户看。如果你用的是 ChatGPT 桌面应用（里面自带 Codex），通常不需要先安装 Node.js，可以直接继续完成 [注册账号](/guide/register)、[账号充值](/guide/recharge) 和 [API Key](/guide/api-key)。
 
 Codex CLI 本身可以通过官方脚本安装，不一定需要你提前准备 Node.js。只有在下面这些情况里，才建议看本页：
 
 | 场景 | 是否需要 Node.js |
 | --- | --- |
-| 使用 Codex App | 不需要 |
+| 使用 ChatGPT 桌面应用 | 不需要 |
 | 使用官方脚本安装 Codex CLI | 通常不需要提前安装 |
 | 使用 `npm install -g @openai/codex` 安装 Codex CLI | 需要 |
 | 使用 `npm install -g @openai/codex@latest` 更新 Codex CLI | 需要 |
@@ -150,7 +150,7 @@ node -v
 npm -v
 ```
 
-如果 Node.js 和 npm 都正常，但 npm 安装仍然失败，可以先改用 [Codex 下载安装](/guide/codex-install) 里的官方脚本方式安装 Codex CLI。
+如果 Node.js 和 npm 都正常，但 npm 安装仍然失败，可以先改用 [ChatGPT 下载安装](/guide/codex-install) 里的官方脚本方式安装 Codex CLI。
 
 ### npm 下载速度慢
 
@@ -172,4 +172,4 @@ npm -v
 - [账号充值](/guide/recharge)
 - [API Key](/guide/api-key)
 
-如果你使用的是 Codex App，并且没有用 npm 安装 Codex CLI，可以直接跳过本页。
+如果你用的是 ChatGPT 桌面应用，并且没有用 npm 安装 Codex CLI，可以直接跳过本页。

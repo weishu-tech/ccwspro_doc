@@ -1,130 +1,172 @@
 ---
-title: Codex 下载安装
-description: 面向新用户的 Codex 客户端和 Codex CLI 安装指南，帮助先确认工具可用，再继续接入 CCWS。
+title: 安装 ChatGPT
+description: 面向零基础用户的 ChatGPT 安装指南（桌面端含 Codex 功能）。不管你有没有编程经验，跟着一步步来就能装好。
 ---
 
-# Codex 下载安装
+# 安装 ChatGPT
 
-新用户建议先完成 Codex 下载安装，确认工具能打开，再继续完成平台注册、账号充值和 API Key 配置。
+欢迎！这一页帮你把 ChatGPT 装到电脑上。ChatGPT 桌面应用里自带 Codex（读作"扣 dex"，OpenAI 出的一个 **AI 编程工具**，你说话，它写代码），不用单独安装。
 
-Codex 常见有两种使用方式：客户端和命令行。普通用户建议优先使用客户端，界面更直观，也方便查看项目、会话历史和代码变更；命令行适合已经熟悉终端、Linux、远程服务器或需要脚本化运行的用户。
+## 先帮你做个选择：用桌面应用还是命令行？
 
-## 客户端方式（推荐）
+用 ChatGPT 有两种方式，**选一种就行**：
 
-### 打开官方下载页面
+| 方式 | 适合谁 | 长什么样 |
+| --- | --- | --- |
+| **ChatGPT 桌面应用**（里面自带 Codex） | ✅ **绝大多数用户**，包括第一次接触编程的你 | 跟普通软件一样，有窗口、有按钮、可以鼠标点 |
+| **Codex CLI**（命令行，Command Line Interface 的缩写） | 习惯在黑色窗口里敲命令的人，或者用 Linux / 远程服务器的人 | 在终端（那个黑底白字的窗口）里敲命令操作 |
 
-打开 [Codex 官方下载页面](https://openai.com/zh-Hans-CN/codex/get-started/)，按自己的系统下载安装包。
+::: tip 🎯 直接给你结论
+**选 ChatGPT 桌面应用。** Codex 功能现在就在 ChatGPT 桌面应用里，不用单独装。除非你很清楚自己要用命令行（比如你是程序员，或者用 Linux），不然用桌面应用就够了。下面先讲桌面应用怎么装，命令行放在后面备用。
+:::
 
-| 系统 | 说明 |
+## 方式一：安装 ChatGPT 桌面应用（推荐 ✅）
+
+### 打开下载页面
+
+用浏览器打开 ChatGPT 桌面应用的官方下载页面：
+
+👉 [https://openai.com/chatgpt/download/](https://openai.com/chatgpt/download/)
+
+打开后你会看到页面标题写着「Download ChatGPT for desktop」，上面有 macOS 和 Windows 两个下载入口。
+
+**根据你的电脑系统，点对应的按钮：**
+
+| 你的电脑 | 点哪个 |
 | --- | --- |
-| macOS | 点击页面上的“下载 macOS 版” |
-| Windows | 在官方页面选择 Windows 入口，按提示跳转到 Microsoft Store 下载 |
-| Linux | 暂无桌面客户端，建议使用命令行方式 |
+| 🍎 Mac 电脑 | 点 **「macOS」** 下载按钮，会下载一个安装文件 |
+| 🪟 Windows 电脑 | 点 **「Windows」** 下载按钮，会跳转到 Microsoft Store（微软应用商店），在商店里点 **「获取」** 或 **「安装」** |
+| 🐧 Linux 电脑 | ChatGPT 桌面应用没有 Linux 版，直接看下方的 [命令行方式](#方式二安装-codex-cli备选) |
 
-::: warning Windows 系统版本要求
-Codex App 最低支持 Windows 10。Windows 8 用户只能通过 Codex CLI 使用；Windows 8 以下系统无法使用 Codex，需要先升级系统。
+![ChatGPT 桌面应用下载页面](/images/screenshots/codex-client-download.png)
+
+::: warning ⚠️ Windows 用户注意
+ChatGPT 桌面应用要求 Windows 10 或更高版本。
+- 如果你的电脑是 **Windows 10 或 Windows 11** → 没问题，继续。
+- 如果是 **Windows 8** → 不能用桌面应用，看下方的 [命令行方式](#方式二安装-codex-cli备选)。
+- 如果是 **Windows 7 或更早** → 需要先升级系统才能用。
 :::
 
-::: tip 下载不顺时
-如果 Microsoft Store 暂时无法下载，可以先使用下方的命令行方式安装 Codex CLI，先把工具用起来。等客户端可以正常下载后，再切回客户端方式。
+::: tip 💡 Microsoft Store 打不开或下载太慢？
+别着急，先看下方的 [命令行方式](#方式二安装-codex-cli备选) 装 Codex CLI，一样能用。等商店恢复正常了再换回桌面应用。
 :::
 
-![Codex 官方下载页面](/images/screenshots/codex-client-download.png)
+### 安装并打开 ChatGPT
 
-### 安装并打开 Codex
+下载完成后：
+- **Mac**：会得到一个 `.dmg` 文件，双击打开，把 ChatGPT 图标拖进「应用程序」文件夹。
+- **Windows**：Microsoft Store 会自动安装，装好后在开始菜单里能找到 ChatGPT。
 
-下载完成后，按系统安装器提示安装 Codex。安装完成后打开 Codex 客户端，首次启动时按页面提示完成登录或授权。
+安装完成后，**双击 ChatGPT 图标打开它**。第一次打开时，ChatGPT 会引导你登录 OpenAI 账号（或者创建新账号），按屏幕上的提示操作就行。
 
-### 打开项目文件夹
+你会看到 ChatGPT 的主界面，这说明安装成功了 ✅。
 
-在 Codex 客户端中选择一个本地项目文件夹。如果你还没有项目，可以先新建一个空文件夹用于测试。
+### 在 ChatGPT 里进入 Codex，打开项目文件夹
 
-![Codex 客户端选择项目文件夹](/images/screenshots/codex-client-open-project.png)
+在 ChatGPT 桌面应用里找到并进入 **Codex**（界面里通常有明显的 Codex 入口）。进入后，它会让你选择一个文件夹来工作。这个文件夹就是 Codex 帮你写代码的地方。
 
-::: tip 提示
-这一步只需要确认 Codex 客户端能正常打开和选择文件夹。后续接入 CCWS 请求地址和 API Key，需要继续完成平台注册、账号充值与 API Key 配置。
+- **如果你有项目文件夹**：直接选你的项目文件夹。
+- **如果你还没有**：在桌面上新建一个空文件夹（右键 → 新建文件夹 → 随便起个名字比如"我的项目"），然后在 Codex 里选它。
+
+![在 ChatGPT 里打开项目文件夹](/images/screenshots/codex-client-open-project.png)
+
+选好文件夹后，Codex 的主工作界面就会出现。
+
+::: tip ✅ 检查点
+到这一步，你只需要确认两件事：
+1. ChatGPT 能正常打开，不是闪退或白屏。
+2. 能进入 Codex，并选一个文件夹，看到 Codex 的工作界面。
+
+**做到这两步就够了。** 接下来要注册并配置请求地址，ChatGPT 才能开始用，继续看下面的「下一步」。
 :::
 
-## 命令行方式（备选）
+---
 
-命令行方式适合熟悉终端的用户，也适合 Linux、远程服务器或客户端暂时无法安装的场景。
+## 方式二：安装 Codex CLI（备选）
 
-### 安装 Codex CLI
+Codex CLI（命令行版本）是给习惯在终端（那个黑底白字的窗口）里敲命令的人准备的。下面这些情况才用得上它：
 
-macOS / Linux 可以使用官方安装脚本：
+| 你的情况 | 需要 CLI 吗？ |
+| --- | --- |
+| 用 Linux 系统 | ✅ 需要，ChatGPT 桌面应用没有 Linux 版 |
+| Mac / Windows，但桌面应用装不上 | ✅ 可以先用 CLI |
+| 程序员，本来就天天用终端 | ✅ 可以用 CLI |
+| 普通用户，桌面应用已经装好了 | ❌ 不需要，跳过这一整节 |
 
-```bash
-curl -fsSL https://chatgpt.com/codex/install.sh | sh
-```
+### 打开终端
 
-Windows 可以在 PowerShell 中执行：
+先找到你电脑上的终端程序（那个用来敲命令的窗口）：
 
-```powershell
-powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"
-```
+| 你的电脑 | 怎么打开终端 |
+| --- | --- |
+| 🍎 Mac | 按 `Command + 空格`，搜索 **「终端」** 或 **「Terminal」**，回车打开 |
+| 🪟 Windows | 按 `Win 键`，搜索 **「PowerShell」**，回车打开 |
 
-也可以使用包管理工具安装：
+打开后你会看到一个黑底白字（或白底黑字）的窗口，里面有一行闪烁的光标，这就是终端。
+
+### 运行安装命令
+
+**把下面这行命令完整复制**（从 `curl` 开始到 `sh` 结束），粘贴到终端窗口里，按回车：
 
 ::: code-group
 
-```bash [npm]
-npm install -g @openai/codex
-```
-
-```bash [Homebrew]
-brew install --cask codex
-```
-
-:::
-
-安装完成后，关闭当前终端窗口，重新打开终端。
-
-### 更新 Codex CLI
-
-如果已经安装过 Codex CLI，建议先更新到当前可用版本。按你当时的安装方式选择一种即可。
-
-::: code-group
-
-```bash [官方脚本 macOS / Linux]
+```bash [Mac]
 curl -fsSL https://chatgpt.com/codex/install.sh | sh
 ```
 
-```powershell [官方脚本 Windows]
+```powershell [Windows]
 powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"
-```
-
-```bash [npm]
-npm install -g @openai/codex@latest
-```
-
-```bash [Homebrew]
-brew update
-brew upgrade --cask codex
 ```
 
 :::
 
-更新完成后，关闭当前终端窗口，重新打开终端。
+按回车后，屏幕上会跑一些文字，这是在自动下载和安装。**看到命令提示符重新出现（就是你又能输入东西了），说明安装完成。**
 
-### 验证命令是否可用
+::: tip 💡 安装完成后
+**关掉当前终端窗口，重新打开一个新的终端。** 这步很重要，不然系统可能找不到刚刚装好的 Codex CLI。
+:::
 
-执行：
+### 验证装好了没
+
+在新终端里输入下面这行，按回车：
 
 ```bash
 codex --version
 ```
 
-如果能看到版本号，说明 Codex CLI 已安装成功。
+如果你看到类似 `1.0.0` 这样的版本号，说明装好了 ✅。
 
 ![Codex CLI 启动成功](/images/screenshots/codex-cli-start.png)
 
-## 下一步
+如果提示 `command not found`（找不到命令），说明没装上，回到上面重新来一遍。
 
-完成 Codex 下载安装后，继续按顺序完成：
+### 补充：用 npm 安装（只有当你本来就用 npm 才选这个）
 
-- [平台注册：注册 / 登录](/guide/register)
-- [账号充值：充值 / 续费](/guide/recharge)
-- [API Key：请求地址 / API Key](/guide/api-key)
-- [API Key：Codex 配置](/guide/codex)
+如果你电脑上已经装了 Node.js 和 npm（前端开发用的工具），也可以用 npm 安装：
 
-如果你使用 `npm` 方式安装或更新 Codex CLI，再补充本章节下的 [Node.js 环境（CLI 可选）](/guide/nodejs-git)。
+```bash
+npm install -g @openai/codex
+```
+
+如果你不知道 npm 是什么，这一段直接跳过，用上面的官方脚本安装就行。
+
+::: tip 🔗 需要装 Node.js？
+如果你确实需要用 npm 方式安装 Codex CLI，但电脑上还没有 Node.js，去看 [Node.js 环境准备（CLI 用户可选）](/guide/nodejs-git)。
+:::
+
+---
+
+## 装好了，接下来做什么？
+
+恭喜，ChatGPT 已经装好了 🎉 现在按顺序继续：
+
+**👉 下一步：[注册账号](/guide/register)**——打开你的中转站网址注册一个账号，后面配置要用。
+
+完整流程：
+1. ✅ 安装 ChatGPT（你在这里）
+2. ⬜ [注册账号](/guide/register)
+3. ⬜ [给账号充值](/guide/recharge)
+4. ⬜ [创建 API Key](/guide/api-key)
+5. ⬜ [配置 ChatGPT](/guide/connect) —— 发一条测试消息，ChatGPT 能回复你就全部完成了
+
+> 如果你用的是 Linux 系统或者 npm 方式安装的 Codex CLI，在继续之前先看一眼 [Node.js 环境准备](/guide/nodejs-git)，确认环境没问题。

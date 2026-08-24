@@ -1,34 +1,43 @@
 ---
 layout: home
-title: CCWS 文档
-description: CCWS 用户使用说明书，覆盖 Codex安装、平台注册、账号充值、API Key、CC Switch、Codex 生图和常见问题排查。
+title: ChatGPT中转站使用说明书
+description: ChatGPT中转站使用说明书，覆盖 ChatGPT（Codex）安装、账号注册、充值、API Key、CC Switch、生图和常见问题排查。
 
 hero:
-  name: CCWS
-  text: 用户使用说明书
-  tagline: Codex 新用户接入 CCWS 的操作指南
-  image:
-    src: /images/home-hero.png
-    alt: CCWS 使用说明书
+  name: ChatGPT中转站
+  text: 使用说明书
+  tagline: 从零到用上 ChatGPT，6 步搞定，约 20 分钟。没经验也能跟着走。
   actions:
     - theme: brand
-      text: Codex安装
-      link: /guide/codex-install
+      text: 快速开始
+      link: /guide/quickstart
     - theme: alt
-      text: 平台注册
-      link: /guide/register
+      text: 已经装好 ChatGPT？直接配置
+      link: /guide/connect
 
 features:
-  - title: 1. Codex安装
-    details: 安装 Codex 客户端或 CLI，确认工具能正常打开。
-  - title: 2. 平台注册
-    details: 完成账号注册和登录，确认可以进入控制台。
-  - title: 3. 账号充值
-    details: 进入钱包页面充值，保证账号额度可以正常使用。
-  - title: 4. API Key
-    details: 在控制台创建 API Key，并完成 Codex 请求地址和密钥配置。
-  - title: 5. 高级教程
-    details: 按需配置 CC Switch、Codex 生图等进阶能力。
-  - title: 6. 疑难解答
-    details: 遇到安装、认证、网络、权限、计费问题时，按现象排查。
+  - title: 安装 ChatGPT
+    details: 装好桌面应用 ✅
+    link: /guide/codex-install
+    linkText: 开始安装
+  - title: 注册账号
+    details: 注册并登录 ✅
+    link: /guide/register
+    linkText: 去注册
+  - title: 给账号充值
+    details: 钱包充钱 ✅
+    link: /guide/recharge
+    linkText: 去充值
+  - title: 创建 API Key
+    details: ChatGPT 的钥匙，下一步配置要填 ✅
+    link: /guide/api-key
+    linkText: 去创建
+  - title: 配置 ChatGPT
+    details: 填地址和 Key 🎉 能回复就完成了
+    link: /guide/connect
+    linkText: 去配置
+  - title: 生图功能（可选）
+    details: 让 ChatGPT 生成、编辑图片
+    link: /guide/codex-image
+    linkText: 去看看
 ---

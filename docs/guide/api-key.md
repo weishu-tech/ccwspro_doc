@@ -1,90 +1,65 @@
 ---
-title: 请求地址 / API Key
-description: 查看 CCWS 固定请求地址、OpenAI 兼容 Base URL、API Key 创建方式，以及 Codex 和 Codex 生图环境变量配置示例。
+title: 创建 API Key
+description: 在控制台创建 API Key（一串 sk- 开头的密码），用于让 ChatGPT（Codex）连接你的中转站。零基础用户跟着做即可。
 ---
 
-# 请求地址 / API Key
+# 创建 API Key
 
-完成平台注册和账号充值后，请在控制台创建并复制 API Key。请求地址不需要从控制台查找，直接使用本页给出的固定地址即可。
+这一页只做一件事：**在你登录的控制台生成一串 API Key**（读作"A-P-I-Key"）。
+
+### 为什么要创建它
+
+API Key 就是 ChatGPT 连接服务的**钥匙**：
+
+- **它是什么**：一串以 `sk-` 开头的密码，用来证明"这个账号有权限用这项服务"。
+- **用在哪里**：配置的时候，要把它填进 CC Switch（就填一次，之后不用管）。
+- **没有它会怎样**：ChatGPT 没有这把钥匙，就调不动服务，配置了也白配。
+
+拿到这串 Key，配置的时候就要用到它。
+
+## 开始前：先确认充过值
+
+创建 Key 之前，确认你已经**注册并充值**：
+
+- 还没注册？→ [注册账号](/guide/register)
+- 还没充值？→ [给账号充值](/guide/recharge)
+
+## 登录控制台
+
+用浏览器打开**你的中转站网址**并登录。
+
+登录后进的是**控制台**（管理账号的网页后台），左边能看到「API Key」「钱包」这些菜单。
+
+## 进 API Key 页面
+
+在控制台左边找到 **「API Key」** 或 **「密钥管理」**，点进去。
 
 ![API 密钥页面](/images/screenshots/api-key-list.png)
 
-## 获取 API Key
+## 创建并复制 Key
 
-1. 登录 CCWS 控制台。
-2. 进入「API Key」或「密钥管理」页面。
-3. 点击「创建 Key」。
-4. 复制生成的 Key，并保存到本地安全位置。
+1. 点页面上的 **「创建 Key」**。
+2. 创建成功后，页面上会出现一串以 `sk-` 开头的字符，这就是你的 API Key。
+3. 点 **「复制」**，把这串 Key 复制下来，先粘到记事本里放着。
 
 ![创建 API 密钥](/images/screenshots/api-key-create.png)
 
-::: warning 安全提醒
-API Key 等同于账号调用凭证，不要公开到 GitHub、截图、群聊或文章正文中。
+::: tip ✅ 完成标志
+看到并复制到一串以 `sk-` 开头的 Key，这一步就完成了。以后任何工具要连这个服务，填的都是这一串。
 :::
 
-## 请求地址
+::: warning ⚠️ 安全提醒
+API Key 就是你的密码：
 
-CCWS 当前统一请求地址固定填写：
-
-```text
-https://www.ccws.pro
-```
-
-如果配置的是 Codex、CC Switch 的 Codex Provider，或者工具明确要求填写 OpenAI 兼容的 Base URL，固定填写：
-
-```text
-https://www.ccws.pro/v1
-```
-
-## 环境变量示例
-
-Codex 场景可以这样填写：
-
-```bash
-export OPENAI_BASE_URL="https://www.ccws.pro/v1"
-export OPENAI_API_KEY="你的 API Key"
-```
-
-Codex 生图技能需要单独配置生图 API Key：
-
-::: code-group
-
-```bash [macOS / Linux]
-export CCWS_IMAGE_API_KEY="你的 CCWS 生图 API Key"
-```
-
-```powershell [Windows PowerShell]
-$env:CCWS_IMAGE_API_KEY="你的 CCWS 生图 API Key"
-```
-
+- 别发到聊天窗口、截图、群聊、文章里。
+- 别提交到 GitHub（代码托管网站）这类公开仓库。
+- 怀疑泄露了，回控制台删掉旧的、重新生成一串。
 :::
 
-生图 API Key 需要确认支持：
+## 下一步：配置 ChatGPT
 
-```text
-model: gpt-image-2
-```
+Key 到手了，接下来是最后一步：
 
-具体安装步骤见 [Codex 生图教程](/guide/codex-image)。
+**👉 [配置 ChatGPT](/guide/connect)** ——把请求地址和这串 Key 填进 ChatGPT，发一条测试消息，确认配置完成。
 
-## 下一步
-
-API Key 创建后，继续完成：
-
-- [Codex Base URL 怎么填](/guide/codex-base-url)
-- [Codex API Key 配置](/guide/codex-api-key)
-- [高级教程：CC Switch 使用教程](/guide/config-switch)
-- [CC Switch 添加 CCWS Provider](/guide/cc-switch-provider)
-- [Codex 配置](/guide/codex)
-- [高级教程：Codex 生图教程](/guide/codex-image)
-
-如果你使用 `npm` 方式安装或更新 Codex CLI，再回到 [Codex安装](/guide/nodejs-git) 章节补充 Node.js 环境。
-
-## 检查清单
-
-- Base URL 没有多余空格。
-- Codex 配置使用 `https://www.ccws.pro/v1`。
-- Key 使用的是当前账号下最新有效的 Key。
-- 如果用于 Codex 生图技能，确认 Key 支持 `gpt-image-2`。
-- 工具配置中的模型名称和 CCWS 支持的模型一致。
-- 如果使用团队账号，确认当前 Key 有调用权限。
+> 请求地址怎么填：你的中转站网址后面加上 `/v1`，或者网站上专门说明的 API 地址。配置步骤见下一页。

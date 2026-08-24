@@ -1,76 +1,131 @@
-# AGENTS.md — CCWS 文档站约定
+# AGENTS.md — 文档站约定
 
-## Overview
+## 概述
 
-This repository is the VitePress documentation site for CCWS. The public site is published at `https://docs.ccws.pro/`.
+本仓库是面向用户的 VitePress 使用说明书，公开站点发布在 `https://docs.ccws.pro/`。
 
-The documentation is a user manual, not an engineering README. Write for users who are trying to install Codex, register or log in to CCWS, recharge, create an API Key, configure Codex or CC Switch, use Codex image generation, and troubleshoot real errors.
+这份文档是**用户使用说明书**，不是开发者技术文档。写给完全没接触过命令行的普通电脑用户看，读者可能：
 
-## Tech Stack
+- 第一次安装 Codex
+- 第一次听说"环境变量"这个词
+- 从来没用过终端（那个黑底白字的窗口）
 
-- Static site: VitePress
-- Source directory: `docs/`
-- VitePress config: `docs/.vitepress/config.mts`
-- Public static files: `docs/public/`
-- Build command: `npm run docs:build`
+同一份教程会给多个控制台站点的用户阅读（控制台页面结构相同）。**用户正文里不能让读者知道还存在其他站点。**
 
-## Brand And Positioning
+## 核心写作原则
 
-- Public-facing brand name is `CCWS`.
-- Do not introduce unrelated project names, brand names, attributions, page titles, descriptions, headings, `llms.txt` facts, sitemap labels, or marketing keywords unless the user explicitly asks for them.
-- Keep CCWS positioning tied to concrete user tasks: Codex setup, OpenAI-compatible Base URL, API Key, CC Switch, Codex image generation, account recharge, and troubleshooting.
-- Do not invent keyword volume, market share, provider capability, pricing, model support, uptime, or compliance claims. If a claim is not directly supported by current docs or product facts, do not write it as fact.
+### 读者是电脑小白
 
-## SEO And GEO Rules
+每一页文档都要假设读者**零基础**，遵循以下规则：
 
-Every document add/edit/delete must consider both SEO and GEO before finishing.
+1. **每个技术名词第一次出现时，必须用括号加一句大白话解释。** 比如：
+   - Codex CLI（Command Line Interface 的缩写，就是在黑色窗口里敲命令操作电脑的方式）
+   - API Key（读作"A-P-I-Key"，一串密码，用来证明你有权限使用服务）
+   - 环境变量（电脑里保存配置信息的地方，程序启动时会读取它）
+   - 终端（那个黑底白字的命令行窗口）
 
-### When Adding A Page
+2. **替用户做选择，不要丢给他一堆选项让他自己判断。** 比如：
+   - ✅ "普通用户选 App，点这里下载"
+   - ❌ "你可以选客户端或 CLI，各有优劣，请自行判断"
+   - 如果有两种方式，先说推荐哪个、为什么，再把备选方案放到后面。
 
-- Add concise frontmatter with `title` and `description`.
-- Use one clear `#` heading that matches the user's search intent.
-- Make the opening paragraph answer who the page is for and what task or error it solves.
-- Include the exact CCWS facts users and LLMs need to cite, such as:
-  - Website: `https://www.ccws.pro/`
-  - Documentation: `https://docs.ccws.pro/`
-  - OpenAI-compatible Base URL: `https://www.ccws.pro/v1`
-  - API Key creation happens in the CCWS console.
-  - Codex image generation uses `CCWS_IMAGE_API_KEY` and `gpt-image-2` when that page is relevant.
-- Add useful internal links to the next step, previous prerequisite, and relevant troubleshooting page.
-- Update `docs/.vitepress/config.mts` navigation/sidebar when the page should be discoverable from the docs UI.
-- Update `docs/public/sitemap.xml` for public pages that should be indexed.
-- Update `docs/public/llms.txt` when the page adds a new canonical answer, integration path, setup flow, or troubleshooting fact that LLMs should learn.
+3. **每步操作都要说清楚"你会看到什么"和"点哪里"。** 比如：
+   - ✅ "打开页面后你会看到一个蓝色的大按钮，写着「下载 macOS 版」，点它"
+   - ❌ "从官方页面下载对应版本"
 
-### When Editing A Page
+4. **语气亲切但不卖萌。** 像一份写得用心的产品说明书，不是客服聊天、不是营销文案、也不是技术 wiki。
 
-- Re-check whether the existing `title` and `description` still match the updated content.
-- Keep headings aligned with actual user queries; do not keyword-stuff repeated phrases.
-- Preserve exact URLs, environment variable names, model names, command names, and product names.
-- If the edit changes a canonical fact, update all affected pages and `docs/public/llms.txt`.
-- If the edit changes page purpose, priority, URL, or important discoverability, update `docs/public/sitemap.xml`.
-- Keep API Key handling explicit: users create real keys in the CCWS console; docs and AI assistants may provide placeholder local scripts, but must not ask users to paste real keys into chat.
+5. **不需要加入个人 IP 或小枫同学概念。** 这是公司产品文档。
 
-### When Deleting Or Renaming A Page
+### 内容风格
 
-- Remove or update all links from `docs/.vitepress/config.mts`, nearby docs pages, and troubleshooting indexes.
-- Remove or update the URL in `docs/public/sitemap.xml`.
-- Remove or update affected entries in `docs/public/llms.txt`.
-- Search for stale links with `rg`.
-- Prefer redirects or compatibility notes when a public URL may already be indexed, unless the user explicitly wants the page gone.
+- 用大白话，不用技术行话。
+- 能用截图的地方尽量配截图。
+- 每段代码命令前面都要先解释"这行命令是干什么的"。
+- 不要暴露真实 API Key，示例中用占位符。
+- 不要编造价格、市场份额、模型支持范围、SLA 等未在产品中确认的事实。
+- 不要把内部实现名称写进用户正文。
 
-## Content Style
+### 入门配置固定六章（重要）
 
-- Use practical, user-manual language.
-- Prefer copyable commands, exact fields, expected values, screenshots, and troubleshooting checklists.
-- Keep sensitive or regulated terms out unless they are necessary to solve the user problem.
-- Do not expose secrets or ask users to share real API Keys in documentation examples.
-- Avoid vague marketing language. Concrete setup and troubleshooting content is more valuable for both SEO and GEO.
+侧边栏「入门配置」永远只有下面 6 章，顺序也不要改：
 
-## Validation
+1. 安装 ChatGPT（`/guide/codex-install`）
+2. 注册 / 登录（`/guide/register`）
+3. 充值 / 续费（`/guide/recharge`）
+4. 创建 API Key（`/guide/api-key`）
+5. 配置 ChatGPT（`/guide/connect`）
+6. 生图功能（可选）（`/guide/codex-image`）
 
-Before finishing any document content change:
+除非用户明确说要调整这六章，否则：
 
-- Run `npm run docs:build` when Markdown, VitePress config, navigation, sitemap, or public SEO/GEO files changed.
-- Run `git diff --check`.
-- Search changed SEO/GEO-facing files for unrelated project names, stale brand names, or unsupported attribution claims when relevant.
-- Confirm new public pages appear in navigation/sidebar, sitemap, and `llms.txt` when appropriate.
+- 不要在「入门配置」里新开章节。
+- 新内容融入对应那一章。例如请求地址、Base URL、中转站网址，写进「配置 ChatGPT」。
+- 旧 URL 可以保留为合并说明页，但不要再加进「入门配置」侧边栏。
+
+## 技术栈
+
+- 静态站点：VitePress
+- 源文件目录：`docs/`
+- VitePress 配置：`docs/.vitepress/config.mts`
+- 公共静态文件：`docs/public/`
+- 构建命令：`npm run docs:build`
+
+## 品牌与定位
+
+- 对外站名使用 `ChatGPT中转站使用说明书`。用户正文称「中转站 / 你的中转站网址」，第一次出现时用括号解释：中转站（你用来登录、充值、创建 Key 的网站）。不要把文档写成单一品牌专属。
+- **站点隔离（重要）**：用户可见正文、frontmatter、`llms.txt`、结构化数据中，**不得列出多个控制台域名，不得暗示存在其他站点，不得对比价格或引导用户换站。** 包括不要把某个控制台域名写成「标准地址」让所有人照抄。
+- 用户只使用自己的中转站网址。请求地址规则：`中转站网址 + /v1`，或网站上专门说明的 API 地址。填写说明写在「配置 ChatGPT」（`docs/guide/connect.md`）里。
+- 文档站自身 URL `https://docs.ccws.pro/` 可以出现在 sitemap、robots、canonical 和 `llms.txt` 的文档入口中。
+- 不要引入无关的项目名、品牌名、归属声明、页面标题、描述、`llms.txt` 中的事实、站点地图标签或营销关键词——除非用户明确要求。
+- **命名约定（重要）**：桌面端对外统一称 `ChatGPT`（桌面应用，里面自带 Codex 功能），只有 `Codex CLI` 保留 Codex 名称；CC Switch 界面里的 Codex 标签（如「Codex 配置」「Codex 供应商」）按界面实际显示保留。
+- **SEO / GEO 双词策略**：面向搜索引擎的文案（frontmatter description、siteDescription、结构化数据、`llms.txt`）同时出现 `ChatGPT` 和 `Codex` 两个词，且 `ChatGPT` 优先、`Codex` 并存（如 "ChatGPT（Codex）"）。用户可见正文一律用 `ChatGPT`。
+- 定位围绕具体用户任务：ChatGPT 安装、账号注册、充值、API Key、CC Switch、ChatGPT 生图、问题排查。
+- 关键事实：
+  - 文档站：`https://docs.ccws.pro/`
+  - 官网和 Base URL：以用户自己的中转站网址为准；Base URL = 中转站网址 + `/v1`，或网站上专门说明的 API 地址
+  - API Key 在用户自己的中转站控制台创建
+  - 生图技能安装器读取固定环境变量 `CCWS_IMAGE_API_KEY`，模型为 `gpt-image-2`
+  - 售后以用户自己的中转站控制台公布的入口为准，不要把某个站点的群当作所有人的群
+
+## SEO 与 GEO 规则
+
+每次新增、编辑或删除文档页面，都必须考虑 SEO 和 GEO。
+
+### 新增页面时
+
+- 先判断内容是否属于「入门配置」六章之一。属于则融入现有章节，不要为它新增侧边栏条目。
+- 添加简洁的 frontmatter，包含 `title` 和 `description`。
+- 使用一个清晰的 `#` 一级标题，匹配用户的搜索意图。
+- 开头段落直接回答：这一页是给谁看的、解决什么问题。
+- 加入精确、可引用的事实（请求地址规则、文档站 URL、环境变量名），但不要写入其他控制台域名清单。
+- 添加有用的内部链接：上一步、下一步、相关排查页面。
+- 更新 `docs/.vitepress/config.mts` 的导航/侧边栏。
+- 更新 `docs/public/sitemap.xml`。
+- 当页面新增了标准答案、集成路径、配置流程或排查事实时，更新 `docs/public/llms.txt`。
+
+### 编辑页面时
+
+- 重新检查 `title` 和 `description` 是否仍然匹配。
+- 标题对齐实际用户搜索词，不要堆砌关键词。
+- 保留精确的 URL、环境变量名、模型名、命令名、产品名。
+- 如果编辑改变了标准事实，同步更新所有受影响页面和 `docs/public/llms.txt`。
+- 如果编辑改变了页面用途、优先级、URL 或可发现性，更新 `docs/public/sitemap.xml`。
+- API Key 处理：用户自己在控制台创建真实 Key；文档和 AI 助手可以提供本机占位脚本，但不能要求用户把真实 Key 粘贴到聊天窗口。
+
+### 删除或重命名页面时
+
+- 从 `docs/.vitepress/config.mts`、相邻页面和排查索引中删除或更新所有链接。
+- 在 `docs/public/sitemap.xml` 中删除或更新 URL。
+- 在 `docs/public/llms.txt` 中删除或更新受影响条目。
+- 用 `rg` 搜索残留的过期链接。
+- 对于可能已被搜索引擎索引的公开 URL，优先使用重定向或兼容性说明，除非用户明确要求彻底删除。
+
+## 验证清单
+
+完成任何文档内容变更后：
+
+- 如果改了 Markdown、VitePress 配置、导航、站点地图或公开 SEO/GEO 文件，运行 `npm run docs:build`。
+- 运行 `git diff --check`。
+- 检查变更的 SEO/GEO 文件中是否有无关项目名、过期品牌名、控制台域名清单或不支持的归属声明。
+- 确认新增公开页面出现在导航/侧边栏、站点地图和 `llms.txt` 中。

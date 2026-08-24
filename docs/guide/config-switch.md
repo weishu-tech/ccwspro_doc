@@ -1,11 +1,11 @@
 ---
 title: CC Switch 使用教程
-description: 在 CC Switch 中添加 CCWS Provider，填写官网、API Key 和 https://www.ccws.pro/v1 请求地址，并启用 Codex 配置。
+description: 在 CC Switch 中添加自定义 Provider，填写你的中转站网址、API Key 和请求地址，并启用 ChatGPT（Codex）配置。
 ---
 
 # CC Switch 使用教程
 
-CC Switch 是一个本机桌面配置管理工具。你可以用它保存 CCWS 的请求地址和 API Key，并在 Codex 等命令行工具之间切换配置。
+CC Switch 是装在你电脑上的一个配置管理小工具，用来保存中转站的请求地址和 API Key，方便在 ChatGPT 等工具之间切换配置。
 
 ![CC Switch 配置界面](/images/screenshots/cc-switch-codex-add-entry.png)
 
@@ -13,7 +13,7 @@ CC Switch 是一个本机桌面配置管理工具。你可以用它保存 CCWS �
 
 - 你同时有多个 API 服务或多个账号。
 - 你不想每次手动修改 Codex 配置文件。
-- 你需要在 CCWS 和其他配置之间快速切换。
+- 你需要在不同配置之间快速切换。
 
 ## 安装 CC Switch
 
@@ -38,14 +38,12 @@ brew install --cask cc-switch
 ![选择 CC Switch 安装包](/images/screenshots/cc-switch-github-assets-installers.png)
 
 ::: tip 提示
-截图中的版本号只是示例。CC Switch 会持续更新，下载时以 Releases 页面实际显示的最新版本为准，不需要指定某一个固定版本。
+截图里的版本号只是示例。CC Switch 会持续更新，下载时看 Releases 页面上实际显示的最新版就行，不用认准某个固定版本。
 :::
 
-安装完成后打开 CC Switch。首次启动时，如果它提示导入已有配置，可以按页面提示导入；如果你是第一次配置 Codex，也可以直接新建配置。
+安装完成后打开 CC Switch。首次启动时，如果它提示导入已有配置，可以按页面提示导入；如果你是第一次配置 ChatGPT，也可以直接新建配置。
 
-## 安装完成后配置 CCWS
-
-如果你只需要快速确认 CCWS Provider 的字段，可以直接看 [CC Switch 添加 CCWS Provider](/guide/cc-switch-provider)。
+## 安装完成后填写你的中转站
 
 ### 进入 Codex 配置
 
@@ -63,37 +61,37 @@ brew install --cask cc-switch
 
 ![选择 Codex 自定义配置](/images/screenshots/cc-switch-custom-provider.png)
 
-### 填写 CCWS 信息
+### 填写中转站信息
 
 按下面内容填写：
 
 | 字段 | 说明 |
 | --- | --- |
-| 供应商名称 | 建议填写 `CCWS`，方便后续识别 |
-| 官网链接 | 填写 `https://www.ccws.pro` |
+| 供应商名称 | 填你中转站标题上的名字，方便后续识别 |
+| 官网链接 | 填写你的中转站网址（从浏览器地址栏复制） |
 | API Key | 粘贴当前账号生成的有效 Key |
-| API 请求地址 | Codex 配置填写 `https://www.ccws.pro/v1` |
+| API 请求地址 | 中转站页面上如果写了 API 地址就填那个；没有的话，填中转站网址 + `/v1` |
 
 填写完成后，点击右下角「添加」。
 
-![填写 CCWS 供应商信息](/images/screenshots/cc-switch-provider-form.png)
+![填写供应商信息](/images/screenshots/cc-switch-provider-form.png)
 
 ::: tip 提示
-「完整 URL」开关保持默认关闭即可。除非工作人员特别说明，否则只需要填写兼容 OpenAI Response 格式的服务端点地址。
+「完整 URL」开关保持默认关闭就行。除非工作人员特别说明，一般只需要填兼容 OpenAI Response 格式的地址。
 :::
 
-### 启用配置并重启 Codex
+### 启用配置并重启 ChatGPT
 
-1. 回到 CC Switch 列表，找到刚添加的 `CCWS`。
+1. 回到 CC Switch 列表，找到刚添加的那一项。
 2. 点击「启用」。
 3. 关闭当前终端窗口，并重新打开终端。
-4. 重新启动 Codex 后，发起一次简单测试，确认请求能正常发出。
+4. 重新启动 ChatGPT（用命令行的话就重开终端），发起一次简单测试，确认请求能正常发出。
 
-![启用 CCWS 配置](/images/screenshots/cc-switch-enable-provider.png)
+![启用配置](/images/screenshots/cc-switch-enable-provider.png)
 
 ## 切换 Provider 后显示 Codex 会话历史
 
-如果你在 CCWS、官方 OpenAI 或其他 Provider 之间切换后，发现 Codex 原来的聊天记录没有出现在历史列表里，可以开启 CC Switch 的统一会话历史设置。
+如果你在不同 Provider 之间切换后，发现 ChatGPT 原来的聊天记录没有出现在历史列表里，可以开启 CC Switch 的统一会话历史设置。
 
 ### 进入设置
 
@@ -121,9 +119,9 @@ brew install --cask cc-switch
 
 如果仍然请求失败，优先检查：
 
-- Codex 使用的请求地址是否为 `https://www.ccws.pro/v1`。
+- ChatGPT 使用的请求地址是否为中转站网址 + `/v1`，或网站上专门说明的 API 地址。
 - API Key 是否复制完整。
-- 模型名称是否在 CCWS 当前支持范围内。
+- 模型名称是否在你当前账号支持范围内。
 
 ## 使用建议
 
