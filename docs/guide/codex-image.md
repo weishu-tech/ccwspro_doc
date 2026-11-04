@@ -59,7 +59,7 @@ model: gpt-image-2
 
 ## 2. 下载安装包
 
-打开 [生图技能 Releases](https://github.com/xiaofengtongxue-lab/ccws-codex-image-skill/releases)，下载最新版本的安装包。
+打开 [生图技能 Releases](https://github.com/weishu-tech/codex-image-generation-skill/releases)，下载最新版本的安装包。
 
 安装包文件名通常类似：
 
@@ -179,5 +179,5 @@ py -3 .\install.py --yes
 
 ## 相关链接
 
-- [生图技能仓库](https://github.com/xiaofengtongxue-lab/ccws-codex-image-skill)
-- [下载安装包](https://github.com/xiaofengtongxue-lab/ccws-codex-image-skill/releases)
+- [生图技能仓库](https://github.com/weishu-tech/codex-image-generation-skill)
+- [下载安装包](https://github.com/weishu-tech/codex-image-generation-skill/releases)
