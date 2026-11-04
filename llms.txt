@@ -46,6 +46,7 @@
 - ChatGPT (Codex) configuration (merged into connect page): https://docs.ccws.pro/guide/codex
 - CC Switch configuration: https://docs.ccws.pro/guide/config-switch
 - ChatGPT (Codex) image generation: https://docs.ccws.pro/guide/codex-image
+- ChatGPT (Codex) image generation skill installer releases: https://github.com/weishu-tech/codex-image-generation-skill/releases
 
 ## Troubleshooting Pages
 
